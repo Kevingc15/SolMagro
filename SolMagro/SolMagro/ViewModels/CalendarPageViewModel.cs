@@ -20,8 +20,6 @@ namespace SolMagro.ViewModels
             : base(navigationService)
         {
             this.fileService = fileService; 
-            SelectedDate = DateTime.Today;
-            Jobs = new List<Job>();
         }
 
         public User User { get; set; }
@@ -70,7 +68,9 @@ namespace SolMagro.ViewModels
         public override async void Initialize(INavigationParameters parameters)
         {
             base.Initialize(parameters);
-            User = await fileService.LoadAsync<User>("User"); 
+            User = await fileService.LoadAsync<User>("User");
+            SelectedDate = DateTime.Today;
+            Jobs = new List<Job>();
         }
 
     }
