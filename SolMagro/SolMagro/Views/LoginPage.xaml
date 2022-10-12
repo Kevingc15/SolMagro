@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="SolMagro.Views.LoginPage"
+             xmlns:viewModels="clr-namespace:SolMagro.ViewModels"
+             x:DataType="viewModels:LoginPageViewModel">
+    
+    <StackLayout VerticalOptions="Center">
+            <Entry
+            Grid.Column="1"
+            Text="{Binding User.Email}"
+            Placeholder="Correo electrónico"
+            Keyboard="Email"/>
+            <Entry
+            Grid.Column="1"
+            Text="{Binding User.Password}"
+            IsPassword="True"
+            Placeholder="Contraseña"/>
+            <Button Text="Login"
+                VerticalOptions="End"
+                HorizontalOptions="Center"
+                Command="{Binding LoginCommand}"/>
+
+            <Label Text="{Binding Text}"/>
+        </StackLayout>
+
+</ContentPage>

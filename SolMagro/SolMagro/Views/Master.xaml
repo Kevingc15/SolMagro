@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:prism="http://prismlibrary.com"
+                  prism:ViewModelLocator.AutowireViewModel="True"
+                  x:Class="SolMagro.Views.Master"
+                  xmlns:viewModels="clr-namespace:SolMagro.ViewModels"
+                  x:DataType="viewModels:MasterViewModel">
+
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu">
+            <StackLayout Padding="20">
+                <!-- TODO: // Update the Layout and add some real menu items  -->
+                <Button Text="Calendario" Command="{Binding NavigateCommand}" CommandParameter="CalendarPage" />
+                <Button Text="Tareas" Command="{Binding NavigateCommand}" CommandParameter="JobsPage" />
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    
+</MasterDetailPage>

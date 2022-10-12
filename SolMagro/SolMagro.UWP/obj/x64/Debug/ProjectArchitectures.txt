@@ -1,0 +1,1 @@
+C:\Users\Kevin\Dropbox\reposVS\SolMagro\SolMagro\SolMagro.UWP\SolMagro.UWP.csproj;x64

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="SolMagro.Views.CalendarPage"
+             xmlns:viewModels="clr-namespace:SolMagro.ViewModels" xmlns:models="clr-namespace:SolMagro.Models"
+             x:DataType="viewModels:CalendarPageViewModel"
+             Title="Calendario"
+             IconImageSource="calendario.png">
+    <StackLayout Padding="10"
+        Grid.Row="1">
+        <Grid HorizontalOptions="Center" HeightRequest="60">
+            <DatePicker Date="{Binding SelectedDate}">
+            </DatePicker>
+        </Grid>
+        <Grid HorizontalOptions="Center"
+              VerticalOptions="Center">
+            <Button Text="Consultar" Command="{Binding ConsultCommand}"/>
+        </Grid>
+        <Grid HorizontalOptions="Center"
+              VerticalOptions="Center">
+            <Label Text="{Binding TextDate}"/>
+            <ListView HasUnevenRows="True"
+                      ItemsSource="{Binding Jobs}">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Job">
+                        <ViewCell>
+                            <Frame>
+                                <Grid Padding="0,10"
+                                      ColumnDefinitions="*,Auto,Auto">
+                                    <StackLayout>
+                                        <Label Text="{Binding Title}"/>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                
+            </ListView>
+        </Grid>
+    </StackLayout>
+
+
+  
+</ContentPage>
